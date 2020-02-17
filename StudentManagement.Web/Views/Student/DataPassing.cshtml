@@ -1,0 +1,42 @@
+﻿
+@{
+    ViewBag.Title = "DataPassing";
+}
+
+<h2>DataPassing</h2>
+<h3>ViewData</h3>
+<table border="1">
+    <tr>
+        <td>Student Name</td>
+        <td>Student Department</td>
+    </tr>
+    @foreach (StudentManagement.Entity.StudentDetails item in (List<StudentManagement.Entity.StudentDetails>)ViewData["students"])
+    {
+        <tr>
+            <td>
+                @item.StudentName
+            </td>
+            <td>
+                @item.StudentDept
+            </td>
+        </tr>
+    }
+</table>
+<h3>ViewBag</h3>
+<table border="1">
+    <tr>
+        <td>Student Name</td>
+        <td>Student Department</td>
+    </tr>
+    @foreach (StudentManagement.Entity.StudentDetails item in ViewBag.Student)
+    {
+        <tr>
+            <td>
+                @item.StudentName
+            </td>
+            <td>
+                @item.StudentDept
+            </td>
+        </tr>
+    }
+</table>

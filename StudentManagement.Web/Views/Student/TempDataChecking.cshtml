@@ -1,0 +1,24 @@
+﻿
+@{
+    ViewBag.Title = "TempDataChecking";
+}
+
+<h2>TempDataChecking</h2>
+
+<table border="1">
+    <tr>
+        <td>Student Name</td>
+        <td>Student Department</td>
+    </tr>
+    @foreach (StudentManagement.Entity.StudentDetails item in (List<StudentManagement.Entity.StudentDetails>)TempData["students"])
+    {
+        <tr>
+            <td>
+                @item.StudentName
+            </td>
+            <td>
+                @item.StudentDept
+            </td>
+        </tr>
+    }
+</table>
